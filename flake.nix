@@ -40,6 +40,7 @@
               ];
               title = "NixOS Modules Search";
               urlPrefix = "https://github.com/Wavelens/Gradient/blob/main/";
+              baseHref = "/gradient-search/";
             };
           };
         });
