@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    gradient.url = "github:Wavelens/Gradient";
+    gradient.url = "github:wavelens/gradient";
     search = {
       url = "github:NuschtOS/search";
       inputs = {
@@ -30,17 +30,24 @@
         in
         {
           packages = {
-            default = search.packages.${system}.mkSearch {
-              specialArgs.modulesPath = nixpkgs-unstable + "/nixos/modules";
-              modules = [
-                gradient.nixosModules.default
-                {
-                  _module.args = { inherit pkgs; };
-                }
-              ];
-              title = "NixOS Modules Search";
-              urlPrefix = "https://github.com/Wavelens/Gradient/blob/main/";
+            default = search.packages.${system}.mkMultiSearch {
+              title = "Gradient Modules Search";
               baseHref = "/gradient-search/";
+              scopes = [ {
+                name = "Gradient Server Options";
+                urlPrefix = "https://github.com/wavelens/gradient/blob/main/";
+                modules = [
+                  gradient.nixosModules.default
+                  { _module.args = { inherit pkgs; }; }
+                ];
+              } {
+                name = "Gradient Deploy Options";
+                urlPrefix = "https://github.com/wavelens/gradient/blob/main/";
+                modules = [
+                  gradient.nixosModules.deploy
+                  { _module.args = { inherit pkgs; }; }
+                ];
+              }];
             };
           };
         });
