@@ -60,11 +60,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1776001116,
-        "narHash": "sha256-nAJiyQ+IJi+Gcd20fHTSNuaKPV7dEDT3jHJwKB2VfJQ=",
+        "lastModified": 1776004877,
+        "narHash": "sha256-xaJ9LpeNu+Or3HZNS17Vjr9JT4GxDGgVgPzdvfYs75g=",
         "owner": "wavelens",
         "repo": "gradient",
-        "rev": "a341319d6242b3d5612fb9d896f1d8178a9b56e3",
+        "rev": "ba3061031483f2276cc67ecd9fb024a59dcdfa1e",
         "type": "github"
       },
       "original": {
