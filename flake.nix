@@ -5,7 +5,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     gradient.url = "github:wavelens/gradient";
     search = {
-      url = "github:NuschtOS/search/packages";
+      url = "github:NuschtOS/search";
       inputs = {
         nixpkgs.follows = "nixpkgs-unstable";
       };
