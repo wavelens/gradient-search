@@ -44,7 +44,7 @@
                 name = "Gradient Deploy Options";
                 urlPrefix = "https://github.com/wavelens/gradient/blob/main/";
                 modules = [
-                  gradient.nixosModules.deploy
+                  gradient.nixosModules.client
                   { _module.args = { inherit pkgs; }; }
                 ];
               }];
